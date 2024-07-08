@@ -16,3 +16,10 @@
   background-size: 400% 400%;
 }
 
+.name-gradient {
+  display: inline-block;
+  background: #f4f4f47a;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
