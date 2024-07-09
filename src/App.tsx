@@ -1,6 +1,7 @@
 import React from 'react';
-import InfoCard from './components/InfoCard';
+// import InfoCard from './components/InfoCard';
 import './styles/animations.css';
+import PulsingCircle from './components/PulsingCircle';
 
 function App() {
   return (
@@ -10,13 +11,16 @@ function App() {
         <br></br>
         4-7-8 Breathing!
       </div>
-      <div className="text-7xl font-bold text-white text-center select-none pb-24 name-gradient bg-opacity-20">
-        A project by Sai.
+      <div className="text-7xl font-bold text-white text-center select-none pb-24 name-gradient select-none">
+        A project by Sai
       </div>
-      <InfoCard />
+      {/* <InfoCard /> */}
+
       <br className="m-24"></br>
       
       {/* Adding some extra content to enable scrolling */}
+      <PulsingCircle></PulsingCircle>
+
       <div className="min-h-96"></div>
       <div className="min-h-96"></div>
     </div>
