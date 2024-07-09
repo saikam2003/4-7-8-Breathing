@@ -23,6 +23,9 @@ function App() {
 
       <div className="min-h-96"></div>
       <div className="min-h-96"></div>
+      <div className="min-h-96"></div>
+      <div className="min-h-96"></div>
+      <div className="min-h-96"></div>
     </div>
   );
 }
