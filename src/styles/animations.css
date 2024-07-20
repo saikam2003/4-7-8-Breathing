@@ -26,11 +26,11 @@
 
 .pulsating-circle {
   position: absolute;
-  left: 50%;
+  left: 50.7%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
-  width: 350px;
-  height: 350px;
+  width: 400px;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,33 +44,40 @@
 }
 
 .pulsating-circle.phase-breathe-in {
-  animation: pulse-in 4s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  animation: pulse-in 4s cubic-bezier(0.215, 0.61, 0.355, 1) infinite forwards;
 }
 
 .pulsating-circle.phase-hold {
-  animation: none;
-  transform: scale(1.5);
-  transition: none;
+  animation: hold 7s cubic-bezier(0.215, 0.61, 0.355, 1) infinite forwards;
 }
 
 .pulsating-circle.phase-breathe-out {
-  animation: pulse-out 8s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+  animation: pulse-out 8s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite forwards;
 }
 
 @keyframes pulse-in {
-  0% {
-    transform: scale(1);
+  from {
+    transform: translate(-50%, -50%) scale(1);
   }
-  100% {
-    transform: scale(1.5);
+  to {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+}
+
+@keyframes hold {
+  from {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1.5);
   }
 }
 
 @keyframes pulse-out {
-  0% {
-    transform: scale(1.5);
+  from {
+    transform: translate(-50%, -50%) scale(1.5);
   }
-  100% {
-    transform: scale(1);
+  to {
+    transform: translate(-50%, -50%) scale(1);
   }
 }

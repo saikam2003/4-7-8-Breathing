@@ -5,6 +5,7 @@ const PulsingCircle = () => {
   const [active, setActive] = useState(false);
   const [phase, setPhase] = useState("start");
   const [countdown, setCountdown] = useState(0);
+  const [action, setActionText] = useState("start");
 
   useEffect(() => {
     let timer: number;
@@ -13,6 +14,7 @@ const PulsingCircle = () => {
     if (active) {
       if (phase === "start") {
         setPhase("breathe-in");
+        setActionText("stop");
         setCountdown(4);
         timer = window.setTimeout(() => setPhase("hold"), 4000); // 4 seconds
       } else if (phase === "breathe-in") {
@@ -42,16 +44,17 @@ const PulsingCircle = () => {
 
   const handleClick = () => {
     setActive((prevActive) => !prevActive);
+    setActionText("start");
   };
 
   return (
     <div
-      className={`pulsating-circle mt-96 ${
+      className={`pulsating-circle mt-96 justify-items-center ${
         active ? `phase-${phase}` : ""
       }`}
       onClick={handleClick}
     >
-      <div className="text-wrap">
+      <div className="text-wrap font-bold text-5xl">
         {phase === "start"
           ? "Start"
           : phase === "breathe-in"
